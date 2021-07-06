@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="If2-d3-Foy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="If2-d3-Foy">
                                 <rect key="frame" x="16" y="44" width="358" height="766"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oES-au-Ajr">
                                 <rect key="frame" x="16" y="783" width="358" height="27"/>
@@ -29,12 +30,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="If2-d3-Foy" secondAttribute="trailing" constant="16" id="6zI-uu-wGR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="If2-d3-Foy" secondAttribute="bottom" id="8IN-UB-4Jm"/>
-                            <constraint firstItem="If2-d3-Foy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Qky-uH-ssC"/>
-                            <constraint firstItem="If2-d3-Foy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="peU-lB-s3K"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imgView" destination="If2-d3-Foy" id="Y4W-wg-tGq"/>

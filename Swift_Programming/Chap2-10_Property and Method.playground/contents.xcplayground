@@ -5,6 +5,9 @@
         <page name='10-2'/>
         <page name='10-3'/>
         <page name='10-5.Getter, Setter'/>
-        <page name='10-4_LazySaveProperty'/>
+        <page name='10-4.LazySaveProperty'/>
+        <page name='10-6.Computed Property'/>
+        <page name='10-9.Property Observers'/>
+        <page name='10-10.Inheritance Computed Property and Property Observers'/>
     </pages>
 </playground>

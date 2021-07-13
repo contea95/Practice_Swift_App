@@ -9,5 +9,8 @@
         <page name='10-6.Computed Property'/>
         <page name='10-9.Property Observers'/>
         <page name='10-10.Inheritance Computed Property and Property Observers'/>
+        <page name='10-12.Type Property and Instance Property'/>
+        <page name='10-13.TypeProperty'/>
+        <page name='10-14.KeyPath'/>
     </pages>
 </playground>

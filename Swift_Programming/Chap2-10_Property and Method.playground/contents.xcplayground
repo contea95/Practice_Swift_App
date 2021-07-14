@@ -12,5 +12,9 @@
         <page name='10-12.Type Property and Instance Property'/>
         <page name='10-13.TypeProperty'/>
         <page name='10-14.KeyPath'/>
+        <page name='10-16. keyPathSubscriptAndKeyPath'/>
+        <page name='10-17.keyPath'/>
+        <page name='10-18.Instacne in Class'/>
+        <page name='10-19.mutating Instance in Sturct'/>
     </pages>
 </playground>

@@ -3,5 +3,7 @@
     <pages>
         <page name='13-1_SwiftSortedMethod'/>
         <page name='13-5_TrailingClosure'/>
+        <page name='13-7_ShortArgument'/>
+        <page name='13-11_makeIncrementerFunction'/>
     </pages>
 </playground>

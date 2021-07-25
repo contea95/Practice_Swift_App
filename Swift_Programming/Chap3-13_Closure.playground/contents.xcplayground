@@ -7,5 +7,8 @@
         <page name='13-11_makeIncrementerFunction'/>
         <page name='13-16_EscapeClosure'/>
         <page name='13-18_EscapeClosureInClassInstance'/>
+        <page name='13-19_ErrorOccurhasElementsFunction'/>
+        <page name='13-21_AutoClosure'/>
+        <page name='13-22_ClosureSendToFunctionTransferArgument'/>
     </pages>
 </playground>

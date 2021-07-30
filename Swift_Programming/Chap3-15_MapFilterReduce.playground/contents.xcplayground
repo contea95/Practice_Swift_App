@@ -5,5 +5,7 @@
         <page name='15-2_MapMethod'/>
         <page name='15-3_FilterMethod'/>
         <page name='15-7_Reduce'/>
+        <page name='15-8.MapFilterReduce'/>
+        <page name='15-9.FriendInformation'/>
     </pages>
 </playground>

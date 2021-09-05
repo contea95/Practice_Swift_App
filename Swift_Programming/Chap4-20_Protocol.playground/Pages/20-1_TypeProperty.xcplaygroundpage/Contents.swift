@@ -88,3 +88,4 @@ Message.isSendableInstance("Hello")
 Message.isSendableInstance(Mail.self)
 
 Message.isSendableInstance(myMail)
+

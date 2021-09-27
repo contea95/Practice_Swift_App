@@ -4,5 +4,8 @@
         <page name='27_7_Unowned Optional Reference'/>
         <page name='27-8_Unowned Optional Reference'/>
         <page name='27-9_Unowned Implicitly Optional Property'/>
+        <page name='27-10_Closure Strong Reference Problem'/>
+        <page name='27-13_Capture list'/>
+        <page name='27-14_Strong Reference Problem Solve'/>
     </pages>
 </playground>

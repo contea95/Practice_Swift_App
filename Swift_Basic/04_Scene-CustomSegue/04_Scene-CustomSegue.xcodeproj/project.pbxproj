@@ -13,6 +13,7 @@
 		3300FFB127180D3D0092D91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3300FFAF27180D3D0092D91B /* Main.storyboard */; };
 		3300FFB327180D3F0092D91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3300FFB227180D3F0092D91B /* Assets.xcassets */; };
 		3300FFB627180D3F0092D91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3300FFB427180D3F0092D91B /* LaunchScreen.storyboard */; };
+		3300FFBE27180F460092D91B /* NewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3300FFBD27180F460092D91B /* NewSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3300FFB227180D3F0092D91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3300FFB527180D3F0092D91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3300FFB727180D3F0092D91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3300FFBD27180F460092D91B /* NewSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				3300FFAF27180D3D0092D91B /* Main.storyboard */,
 				3300FFB227180D3F0092D91B /* Assets.xcassets */,
 				3300FFB427180D3F0092D91B /* LaunchScreen.storyboard */,
+				3300FFBD27180F460092D91B /* NewSegue.swift */,
 				3300FFB727180D3F0092D91B /* Info.plist */,
 			);
 			path = "04_Scene-CustomSegue";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3300FFBE27180F460092D91B /* NewSegue.swift in Sources */,
 				3300FFAE27180D3D0092D91B /* ViewController.swift in Sources */,
 				3300FFAA27180D3D0092D91B /* AppDelegate.swift in Sources */,
 				3300FFAC27180D3D0092D91B /* SceneDelegate.swift in Sources */,

@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         let value = Int(sender.value)
         self.intervalText.text = "\(value)분마다"
     }
-    @IBAction func onSubmit(_ sender: UIButton) {
+    @IBAction func onSubmit(_ sender: Any) {
         guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "RVC") as? ResultViewController else {
             return
         }
@@ -48,7 +48,25 @@ class ViewController: UIViewController {
         rvc.paramInterval = self.interval.value
         
         // 화면이동
-        self.present(rvc, animated: true)
+        //self.present(rvc, animated: true)
+        // 네비게이션 컨트롤러로 화면 전환
+        self.navigationController?.pushViewController(rvc, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // 목적지 뷰 컨트롤러 인스턴스 읽어오기
+        let dest = segue.destination
+        
+        guard let rvc = dest as? ResultViewController else {
+            return
+        }
+        
+        rvc.paramEmail = self.email.text!
+        rvc.paramUpdate = self.isUpdate.isOn
+        rvc.paramInterval = self.interval.value
+    }
+    @IBAction func onPerformSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "ManualSubmit", sender: self)
     }
 }
 

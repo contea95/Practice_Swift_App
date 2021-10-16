@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ogO-H0-VSD">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_5_SubmitValue" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,15 +64,6 @@
                                     <action selector="onStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="Skn-bD-6g2"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cql-vr-Zba">
-                                <rect key="frame" x="141" y="347" width="109" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
-                                <connections>
-                                    <action selector="onSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gV5-TD-dhi"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0분마다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnV-9W-s61">
                                 <rect key="frame" x="107" y="278" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,17 +75,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Setting" id="UoE-uS-eBB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="UCA-yg-NtB">
+                            <connections>
+                                <action selector="onPerformSegue:" destination="BYZ-38-t0r" id="bnh-VD-n9r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="email" destination="EMy-2k-3Ci" id="4WT-ed-dcO"/>
                         <outlet property="interval" destination="VbM-cG-K3q" id="iwn-fq-eoO"/>
                         <outlet property="intervalText" destination="CnV-9W-s61" id="uVq-52-i6G"/>
                         <outlet property="isUpdate" destination="Ne5-1E-Ibe" id="A7c-mW-xak"/>
                         <outlet property="isUpdateText" destination="jc0-sF-C0u" id="gsj-fj-JH9"/>
+                        <segue destination="o41-hA-cQZ" kind="show" identifier="ManualSubmit" id="lbX-3p-aKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
+            <point key="canvasLocation" x="1060" y="115.87677725118483"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="6eK-LE-5jd">
@@ -159,6 +158,7 @@
                         <viewLayoutGuide key="safeArea" id="Bay-bl-5tp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u8Q-CK-VIM"/>
                     <connections>
                         <outlet property="resultEmail" destination="I24-pI-ugl" id="Rl9-3h-W6p"/>
                         <outlet property="resultInterval" destination="Fvh-99-u3g" id="Vbf-lW-Blj"/>
@@ -167,7 +167,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fS-tc-gEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.69230769230762" y="115.87677725118483"/>
+            <point key="canvasLocation" x="1876.9230769230769" y="115.87677725118483"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="on1-fB-ldu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ogO-H0-VSD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iN5-ax-oW4">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wUZ-4p-Ajv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gl-03-9jh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
         </scene>
     </scenes>
     <resources>

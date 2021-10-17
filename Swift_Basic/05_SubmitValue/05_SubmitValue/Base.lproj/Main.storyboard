@@ -71,6 +71,15 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-tE-kBO">
+                                <rect key="frame" x="119" y="397" width="153" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ActionSegue Button"/>
+                                <connections>
+                                    <segue destination="o41-hA-cQZ" kind="show" identifier="ActionSubmit" id="a2j-L7-3AN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,6 +197,9 @@
             <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lbX-3p-aKw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

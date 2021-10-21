@@ -34,6 +34,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+            if #available(iOS 11.0, *) { // UserNotification 프레임워크를 통한 로컬 알림(iOS 10)
+                // 알림 동의 여부 확인, 싱글턴 패턴이라 인스턴스 생성 불가. 인스턴스 받아와서 사용
+                UNUserNotificationCenter.current().getNotificationSettings { settings in
+                    if settings.authorizationStatus == UNAuthorizationStatus.authorized {
+                        // 알림을 동의했을 경우
+                        // 발송 내용 정의
+                        let nContent = UNMutableNotificationContent()
+                        nContent.badge = 1
+                        nContent.title = "로컬 알림 메시지"
+                        nContent.subtitle = "준비된 내용~~~"
+                        nContent.body = "Body~~~"
+                        nContent.sound = UNNotificationSound.default
+                        nContent.userInfo = ["name" : "홍길동"]
+    
+                        // 알림 발송 요청 객체
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+    
+                        // 알림 요청 객체
+                        let request = UNNotificationRequest(identifier: "wakeup", content: nContent, trigger: trigger)
+    
+                        UNUserNotificationCenter.current().add(request)
+                        print("발송 완료")
+                    } else {
+                        // 알림을 동의하지 않았을 경우
+                        print("사용자가 동의하지 않음")
+                    }
+                }
+    
+            } else { // UILocalNotification 객체를 이용한 로컬 알림 (iOS 9 이하)
+    
+            }
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

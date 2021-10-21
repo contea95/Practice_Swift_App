@@ -8,22 +8,31 @@
 import UIKit
 import UserNotifications
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if #available(iOS 10.0, *) {
+        if #available(iOS 11.0, *) { // UserNotification 프레임워크 로컬 알림 (iOS 10.0 이상)
             // 경고창, 배지, 사운드를 통한 알림 환경 정보 생성, 사용자 동의 여부
             let notiCenter = UNUserNotificationCenter.current()
-            notiCenter.requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { (didAllow, e) in })
+            notiCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, e) in }
+            notiCenter.delegate = self
         } else {
             
         }
-        
         return true
+    }
+    // 앱 실행 도중 알림메시지가 도착하는 경우
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        if notification.request.identifier == "wakeup" {
+            let userInfo = notification.request.content.userInfo
+            print(userInfo["name"]!)
+        }
+        
+        // 알림 배너 띄우기
+        completionHandler([.alert, .badge, .sound])
     }
 
     // MARK: UISceneSession Lifecycle
@@ -39,7 +48,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 

@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             notiCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, e) in }
             notiCenter.delegate = self
         } else {
-            
+            // UILocalNotification 알림 설정
+            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(setting)
         }
         return true
     }
@@ -34,6 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // 알림 배너 띄우기
         completionHandler([.alert, .badge, .sound])
     }
+    
+    // 사용자가 알림 메시지를 클릭했을 경우
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ Center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping() -> Void) {
+        if response.notification.request.identifier == "wakeup" {
+            let userInfo = response.notification.request.content.userInfo
+            print(userInfo["name"]!)
+        }
+        completionHandler()
+    }
+
 
     // MARK: UISceneSession Lifecycle
 

@@ -63,7 +63,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
     
             } else { // UILocalNotification 객체를 이용한 로컬 알림 (iOS 9 이하)
-    
+                let application = UIApplication.shared
+                let setting = application.currentUserNotificationSettings
+                
+                // 알림 설정이 되어있는지 확인
+                guard setting?.types != .none else {
+                    print("Can't Schedule")
+                    return
+                }
+                
+                // 로컬 알람 인스턴스 생성
+                let noti = UILocalNotification()
+                noti.fireDate = Date(timeIntervalSinceNow: 10) // 지금부터 10초 후 발송
+                noti.timeZone = TimeZone.autoupdatingCurrent
+                noti.alertBody = "다시 접속하세요!"
+                noti.alertAction = "학습하기"
+                noti.applicationIconBadgeNumber = 1
+                noti.soundName = UILocalNotificationDefaultSoundName
+                noti.userInfo = ["name":"홍길동"]
+                
+                // 생성 알람 인스턴스를 스케줄러에 등록
+                application.scheduleLocalNotification(noti)
+                
             }
     }
 

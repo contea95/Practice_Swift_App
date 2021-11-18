@@ -1,0 +1,18 @@
+//
+//  MovieVO.swift
+//  08_MyMovieChart
+//
+//  Created by 한상혁 on 2021/11/10.
+//
+
+import Foundation
+
+// 영화 정보를 담기 위한 객체
+class MovieVO {
+    var thumbnail: String?
+    var title: String?
+    var description: String?
+    var detail: String?
+    var opendate: String?
+    var rating: Double?
+}
